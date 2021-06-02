@@ -1,2 +1,2 @@
-git+https://github.com/baderj/python-ant.git
-pybluez
+pygatt
+pexpect

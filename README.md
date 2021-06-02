@@ -1,20 +1,27 @@
 # iconsole
-Reverse engineering of the iconsole+ bike computer serial protocol.
 
-Broadcasts the power and speed on the ANT network.
+Reverse engineering of the iconsole+ bike computer serial protocol, adapted for some Bluetooth LE devices.
 
-See also my android app [OpeniConsole](https://github.com/haraldh/iconsole-android).
+Based on Harald Hoyer's [iconsole](https://github.com/haraldh/iconsole) and discussion [here](https://github.com/haraldh/iconsole/issues/2).
 
 ## Requirements
 
 ```
-$ pip install --user requirements.txt
+$ pip install -r --user requirements.txt
 ```
 
 ## Usage
 
+Usage:
+
 ```
-$ python iConsole.py <ANT Network Key in ASCII Hex>
+$ python3 main.py <macaddr> <sessionlog>
 ```
 
-Use the ANT+ network key to record the data with ANT+ compatible devices, such as a bike computer or fitness watch.
+You can get the macaddr of the iconsole device using
+
+```
+$ hcitool -i hci0 lescan
+```
+
+Usually the device you're looking for will have a recognizable description.
